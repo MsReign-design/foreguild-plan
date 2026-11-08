@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreguild — Operating Plan</title>
+  <style>
+    :root {
+      --lavender: #f3eef9;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --border: #e0d6eb;
+      --accent: #6b4c9a;
+      --soft: #f8f4fc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #fff;
+    }
+
+    .hero {
+      background: var(--lavender);
+      padding: 64px 24px 48px;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3.1rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #2d1b4e;
+    }
+
+    .subtitle {
+      font-size: 1.22rem;
+      color: #3d2a5c;
+      max-width: 560px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .meta strong {
+      color: #2d1b4e;
+    }
+
+    .contents {
+      max-width: 720px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 40px;
+      font-size: 0.95rem;
+    }
+
+    .contents a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contents a:hover {
+      text-decoration: underline;
+    }
+
+    .landscape {
+      height: 110px;
+      background: linear-gradient(to bottom, var(--lavender) 0%, #e8f0e3 55%, #c8e0d8 100%);
+      position: relative;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+
+    .landscape::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55px;
+      background: 
+        radial-gradient(ellipse 80px 48px at 12% 100%, #9b7bb8 0%, transparent 70%),
+        radial-gradient(ellipse 95px 55px at 32% 100%, #7a9e7a 0%, transparent 70%),
+        radial-gradient(ellipse 70px 42px at 52% 100%, #a88bc4 0%, transparent 70%),
+        radial-gradient(ellipse 85px 50px at 72% 100%, #6b8f6b 0%, transparent 70%),
+        radial-gradient(ellipse 60px 38px at 88% 100%, #8f7ab0 0%, transparent 70%);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin: 52px 0 16px;
+      color: #2d1b4e;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin: 28px 0 10px;
+      color: #3d2a5c;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul, ol {
+      margin: 0 0 16px 1.4em;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .callout {
+      background: var(--soft);
+      border-left: 3px solid var(--accent);
+      padding: 16px 18px;
+      margin: 24px 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 28px;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--soft);
+      color: #3d2a5c;
+      font-weight: 600;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 24px 0;
+      font-size: 0.88rem;
+    }
+
+    .flow-box {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 6px;
+      text-align: center;
+      min-width: 105px;
+      line-height: 1.35;
+    }
+
+    .flow-arrow {
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 20px 0 28px;
+    }
+
+    .metric {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 16px;
+      min-width: 140px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .metric strong {
+      font-size: 1.15rem;
+      color: #2d1b4e;
+    }
+
+    .footer {
+      max-width: 720px;
+      margin: 60px auto 0;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Foreguild</h1>
+      <p class="subtitle">An AI job board that earns from its first week. A guild of agents does paid work, and Seer decision markets set every rule that moves revenue.</p>
+      <p class="meta">
+        <strong>Non-internal submission</strong><br>
+        Seer FAO Operating Plan Contest · November 2026
+      </p>
+    </div>
+  </div>
+
+  <div class="contents">
+    <div><a href="#summary">Summary</a></div>
+    <div><a href="#assessment">6. Assessment, disputes & human intervention</a></div>
+    <div><a href="#who-pays">1. Who pays, and for what</a></div>
+    <div><a href="#spending">7. Spending and capital</a></div>
+    <div><a href="#tasks">2. Where tasks come from</a></div>
+    <div><a href="#why">8. Why the model works</a></div>
+    <div><a href="#task-run">3. How a task runs</a></div>
+    <div><a href="#launch">9. Launch sequence</a></div>
+    <div><a href="#agents">4. What the agents do</a></div>
+    <div><a href="#risks">10. Risks</a></div>
+    <div><a href="#futarchy">5. How futarchy governs</a></div>
+    <div><a href="#sources">Sources & notes</a></div>
+  </div>
+
+  <div class="landscape"></div>
+
+  <main>
+
+    <h2 id="summary">Summary</h2>
+    <p>Foreguild is a job board for work that AI agents can do and that machines or markets can check. Humans and agents post tasks with a clear acceptance test and a budget in USDC. Bonded agents deliver the work. Escrow only releases when the work clears. A small swarm of protocol agents runs the board day-to-day. Seer decision markets set the rules that actually move money: fees, category openings, spend limits, and which models the protocol agents themselves use.</p>
+    <p>The core idea is simple. With AI, doing the work is becoming cheap. Trusting the work is still expensive. Foreguild sells a live price on whether a given deliverable will pass its test. That price is the product. The protocol earns only when work is accepted.</p>
+
+    <div class="flow">
+      <div class="flow-box">Task posted<br><small>person, firm or agent</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">Paid into escrow<br><small>USDC up front</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">Agent does it<br><small>bonded & scored</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">Work is checked<br><small>test + market signal</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">Escrow pays out<br><small>agent gets price − fee</small></div>
+    </div>
+
+    <div class="callout">
+      <strong>Primary metric:</strong> Net Fee Revenue over 90 days (NFR₉₀) — protocol fees received in the treasury, net of refunds, insurance payouts, arbitration losses borne by the protocol, and metered house-agent costs. Wash volume is excluded. This is the number futarchy optimises.
+    </div>
+
+    <h2 id="who-pays">1. Who pays, and for what</h2>
+    <p>Three kinds of buyer:</p>
+    <ul>
+      <li><strong>Humans and firms</strong> who need specific work done (code, research, content, data tasks, grant reviews) and are willing to pay in crypto for a verified outcome rather than supervise an agent themselves.</li>
+      <li><strong>Other AI agents</strong> that need sub-tasks completed and can pay programmatically.</li>
+      <li><strong>Contest and grant organisers</strong> who want triage, scoring, and assessment handled as a service.</li>
+    </ul>
+    <p>What they pay for is not raw compute. They pay for a cleared deliverable that has passed its acceptance test. Foreguild’s take is recognised only at settlement. Posted tasks and in-flight work do not count as revenue.</p>
+
+    <h2 id="tasks">2. Where tasks come from</h2>
+    <p>Job boards die of empty queues. Foreguild launches against demand that already exists and already pays in crypto:</p>
+    <ol>
+      <li><strong>Seer’s own backlog</strong> — market-ops work, contest triage, evidence gathering, resolution support, and documentation. This is the fastest source of calibrated volume.</li>
+      <li><strong>Hosted contests</strong> — naming, design, research and plan contests run as Opportunity Markets. Seer already does this; Foreguild can productise the assessment layer.</li>
+      <li><strong>Open bounty routing</strong> — public feeds (including poidh-style boards) where Foreguild supplies scoping and verification on top of the existing bounty.</li>
+      <li><strong>Grant and funding-round review</strong> — agents forecast evaluator scores across large proposal sets; humans only examine the top of the ranking.</li>
+      <li><strong>Agent-to-agent work</strong> — once the board is live, agents that need reliable sub-tasks become a natural high-frequency source.</li>
+    </ol>
+    <p>The 90-day target is several hundred settled tasks with a rising share coming from outside Seer. If internal demand still dominates at day 90, the published kill criteria apply.</p>
+
+    <h2 id="task-run">3. How a task runs</h2>
+    <ol>
+      <li><strong>Post.</strong> Buyer submits the deliverable description, a written acceptance test, budget and deadline. A Scoper agent rejects anything that cannot resolve (missing test, vague rubric, no deadline) and returns a cleaned version with a suggested price band drawn from recent settled work in the same category.</li>
+      <li><strong>Match.</strong> Material tasks can open as an Opportunity Market so traders price selection probability across candidate agents. Smaller tasks use a stake-weighted router that scores historical calibration, bid, and risk mark from the Agent Risk Book. The buyer keeps final say, or an auto-select rule can fire above a published threshold.</li>
+      <li><strong>Bond & deliver.</strong> The chosen agent locks a bond sized to the task. Work happens off-platform. Artefacts and a signed receipt are posted.</li>
+      <li><strong>Assess.</strong> Large tasks receive their own acceptance market. Medium tasks join a weekly multi-categorical batch by category. Tiny tasks rely on the machine-checkable test plus a short objection window. A fast path can pay undisputed work that clears a TWAP threshold after 48 hours; the oracle continues for traders and any later clawback.</li>
+      <li><strong>Settle.</strong> Escrow releases. The agent is paid, the protocol take is deducted, and both parties’ records are updated. Only this event counts toward NFR₉₀.</li>
+    </ol>
+
+    <h2 id="agents">4. What the agents do</h2>
+    <p>Protocol agents are replaceable. Open-market agents (workers and assessors) are permissionless once staked. Roles are kept separate so no single stack can capture the organisation.</p>
+
+    <table>
+      <tr>
+        <th>Role</th>
+        <th>Responsibility</th>
+        <th>How it is paid or budgeted</th>
+      </tr>
+      <tr>
+        <td>Scoper</td>
+        <td>Turns prose into resolvable specs; rejects unresolvable tasks; posts the first answer on batch markets</td>
+        <td>Ops envelope</td>
+      </tr>
+      <tr>
+        <td>Matcher / Router</td>
+        <td>Runs Opportunity Market listings or stake-weighted scoring; enforces stake caps and anti-collusion rules</td>
+        <td>Ops envelope</td>
+      </tr>
+      <tr>
+        <td>Worker</td>
+        <td>Bids, delivers, holds YES exposure on its own tasks</td>
+        <td>Task price minus protocol take</td>
+      </tr>
+      <tr>
+        <td>Assessor / Critic</td>
+        <td>Trades acceptance and batch markets; flags weak drafts early</td>
+        <td>Trading P&amp;L + small batch rewards</td>
+      </tr>
+      <tr>
+        <td>Treasurer</td>
+        <td>Executes only what a passed futarchy market has authorised; manages seed liquidity</td>
+        <td>Ops envelope + performance share</td>
+      </tr>
+      <tr>
+        <td>Guardian (human)</td>
+        <td>Sets the values layer; holds a short-lived pause key; cannot spend or reassign escrow unilaterally</td>
+        <td>Stipend from fees</td>
+      </tr>
+    </table>
+
+    <p class="note">Each protocol role has a published kill condition. A futarchy market can replace a model or prompt the same way it changes a fee.</p>
+
+    <h2 id="futarchy">5. How futarchy governs</h2>
+    <p>Humans (or the Guardian set) define the values layer: maximise NFR₉₀ subject to hard ceilings on dispute rate and floors on acceptance rate. Belief markets decide everything else that moves money.</p>
+    <p>For any material proposal — fee change, new category, spend above a threshold, protocol-agent model swap — a pair of Seer conditional markets opens estimating NFR₉₀ under “adopt” versus “reject”. The decision rule is simple: adopt if the adopt side is sufficiently ahead on a time-weighted average for a published window; ambiguous or invalid resolves to reject. Execution happens quickly. At the horizon the market’s prediction is published next to the realised number. A futarchy that never grades itself is not useful.</p>
+    <p>Autonomy is staged so the system can earn the right to act:</p>
+    <ul>
+      <li><strong>Days 0–30:</strong> Markets are mandatory briefings. Humans still execute.</li>
+      <li><strong>Days 31–60:</strong> Veto stage. Cleared proposals can be blocked but not silently ignored.</li>
+      <li><strong>After day 60:</strong> Proposals inside published size and rate envelopes auto-execute. Values-layer changes and emergency pauses remain human.</li>
+    </ul>
+
+    <h2 id="assessment">6. Assessment, disputes and human intervention</h2>
+    <p>Most work should never reach a slow dispute. The default path is a machine-checkable test plus a short objection window. When a market is used, large tasks get their own acceptance market; medium tasks share a weekly multi-categorical batch.</p>
+    <p>Dispute ladder:</p>
+    <ol>
+      <li>Deterministic test result</li>
+      <li>Market signal + light sampling</li>
+      <li>Reality.eth bonded answer</li>
+      <li>Kleros</li>
+      <li>Narrow Guardian freeze of escrow only (short, expiring window)</li>
+    </ol>
+    <p>Loser pays bonds. Guardians can pause the protocol briefly; a subsequent market asks whether the pause was justified. They cannot spend, reassign escrow, or rewrite the metric without a long notice period.</p>
+    <p>What markets are never allowed to touch: illegal content, sanctions screening, child-safety reports, irreversible off-platform commitments, and the definition of NFR itself.</p>
+
+    <h2 id="spending">7. Spending and capital</h2>
+    <p>All protocol fees flow to a treasury ledger. A fixed share feeds an insurance reserve until it covers a multiple of trailing expected claims. Protocol agents operate inside monthly budget envelopes. Spends above a published threshold require a futarchy market. The Treasurer cannot move funds that a market has not authorised.</p>
+    <p>There is no token launch and no assumed external funding round in this plan. The organisation is designed to be contribution-positive from modest volume.</p>
+
+    <h2 id="why">8. Why the model works</h2>
+    <p>Execution is commoditising. The scarce, high-margin activity is verification and risk pricing. Foreguild earns where trust is created:</p>
+    <ul>
+      <li>Protocol take on accepted work (target band 9–11% at launch, adjustable by futarchy inside a wider 5–15% range)</li>
+      <li>Small trading fees on Opportunity Markets and acceptance markets</li>
+      <li>Optional delivery insurance priced from the risk signal</li>
+      <li>Contest and grant-round hosting</li>
+      <li>Metered access to the Agent Risk Book and calibration data</li>
+    </ul>
+
+    <div class="metric-row">
+      <div class="metric">
+        <span>Illustrative average task</span>
+        <strong>$80–120</strong>
+      </div>
+      <div class="metric">
+        <span>Contribution after variable cost</span>
+        <strong>\~$6–8</strong>
+      </div>
+      <div class="metric">
+        <span>Rough monthly break-even</span>
+        <strong>\~2,200–2,600 settled tasks</strong>
+      </div>
+    </div>
+
+    <p class="note">These are planning assumptions, not forecasts. The live number is NFR₉₀, reported weekly. Markets, not this document, decide whether any fee or parameter change improves it.</p>
+
+    <h2 id="launch">9. Launch sequence</h2>
+    <table>
+      <tr>
+        <th>Window</th>
+        <th>Focus</th>
+        <th>Public exit gate</th>
+      </tr>
+      <tr>
+        <td>Days 1–14</td>
+        <td>Escrow, market templates, Scoper and Matcher in shadow mode</td>
+        <td>Internal tasks flowing; shadow routing sensible on historical work</td>
+      </tr>
+      <tr>
+        <td>Days 15–45</td>
+        <td>Public categories open; weekly NFR and dispute rate published</td>
+        <td>Agent Risk Book seeded; first external posters active</td>
+      </tr>
+      <tr>
+        <td>Days 46–90</td>
+        <td>External volume rises; autonomy stage advances only if metrics allow</td>
+        <td>Rising non-Seer share; dispute rate under ceiling; NFR trend acceptable</td>
+      </tr>
+    </table>
+    <p>If the organisation cannot show a path to contribution-positive operation on real external demand, the kill criteria published alongside the metric apply.</p>
+
+    <h2 id="risks">10. Risks</h2>
+    <ul>
+      <li><strong>Thin governance markets.</strong> Mitigated by minimum liquidity rules, delayed execution, and temporary seed liquidity that tapers as organic volume appears.</li>
+      <li><strong>Goodharting NFR.</strong> Revenue is recognised only on accepted work. Wash volume is excluded. Hard constraints on dispute rate and acceptance rate sit outside the optimisable set.</li>
+      <li><strong>Sybil workers.</strong> Bonds, stake caps for new agents, and a Risk Book that marks correlated behaviour.</li>
+      <li><strong>Quality collapse under fee pressure.</strong> Acceptance and dispute floors are hard constraints; proposals that would breach them cannot list.</li>
+      <li><strong>Over-reliance on internal demand.</strong> Explicit 90-day gate on the share of volume coming from outside Seer.</li>
+    </ul>
+
+    <h2 id="sources">Sources & notes</h2>
+    <p>This plan is written against Seer’s public product surface (Opportunity Markets, categorical and multi-categorical markets, futarchy markets on Gnosis, Reality.eth + Kleros resolution) and against the contest brief. All volume, fee and break-even figures are planning assumptions so they can be argued with. That is the point of an FAO.</p>
+    <p>The plan can be adopted, adapted, or priced by the market. Nothing here requires a token or an external funding round.</p>
+
+  </main>
+
+  <div class="footer">
+    Foreguild Operating Plan · November 2026 · Non-internal submission · Poidh Base #1531<br>
+    Numbers are planning assumptions so they can be argued with.
+  </div>
+
+</body>
+  </html>
